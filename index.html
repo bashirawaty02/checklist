@@ -8,85 +8,149 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <div class="container-sm bg-dark">
+    
+
+  </head>
+  <body>
+    
+
+    <!-- for iphone layout -->
+
+    <div class="modal fade" id="newTask" tabindex="-1" role="dialog" aria-labelledby="newTaskLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newTaskLabel">Add new task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="task-name" class="col-form-label">Task name:</label>
+                <input type="text" class="form-control" id="task-name">
+              </div>
+              <div class="form-group">
+                <label for="task-description" class="col-form-label">Task description:</label>
+                <textarea class="form-control" id="task-description"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="assigned-to" class="col-form-label">Assigned to:</label>
+                <input type="text" class="form-control" id="assigned-to">
+              </div>
+              <div class="form-group">
+                <label for="due-date">Due date:</label>
+                <input type="date" class="form-control" id="due-date">
+                <!-- <input type="date" id="due-date" name="due-date"> -->
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>To do</option>
+                  <option>In progress</option>
+                  <option>Review</option>
+                  <option>Done</option>
+                </select>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Reset</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="editTask" tabindex="-1" role="dialog" aria-labelledby="editTaskLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editTaskLabel">Edit task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="task-name" class="col-form-label">Task name:</label>
+                <input type="text" class="form-control" id="task-name">
+              </div>
+              <div class="form-group">
+                <label for="task-description" class="col-form-label">Task description:</label>
+                <textarea class="form-control" id="task-description"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="assigned-to" class="col-form-label">Assigned to:</label>
+                <input type="text" class="form-control" id="assigned-to">
+              </div>
+              <div class="form-group">
+                <label for="due-date">Due date:</label>
+                <input type="date" class="form-control" id="due-date">
+                <!-- <input type="date" id="due-date" name="due-date"> -->
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>To do</option>
+                  <option>In progress</option>
+                  <option>Review</option>
+                  <option>Done</option>
+                </select>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Reset</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
       
       <div class="row">
         <div class="col">
-          
-          <div class="m-3 mx-auto d-flex flex-row-reverse" style="width: 18rem;">
+
+          <!-- todo: put Tasks & the button into a flex box -->
+          <h2>Tasks</h2>
+          <p>
+            <span><button type="button" class="btn btn-light float-right" id="addTaskButton" data-toggle="modal" data-target="#newTask">Add Task</button></span>
+          </p>    
+          <br>
+          <br>
+
+          <!-- A button on the right hand side -->
+          <!-- <div class="m-3 mx-auto d-flex flex-row-reverse" style="width: 18rem;">
             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#newTask" data-whatever="@mdo">Add task</button>
-          </div>    
+          </div>     -->
 
-          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button> -->
+      
 
-          
-          <div class="modal fade" id="newTask" tabindex="-1" role="dialog" aria-labelledby="newTaskLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="newTaskLabel">Add new task</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="form-group">
-                      <label for="task-name" class="col-form-label">Task name:</label>
-                      <input type="text" class="form-control" id="task-name">
-                    </div>
-                    <div class="form-group">
-                      <label for="task-description" class="col-form-label">Task description:</label>
-                      <textarea class="form-control" id="task-description"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label for="assigned-to" class="col-form-label">Assigned to:</label>
-                      <input type="text" class="form-control" id="assigned-to">
-                    </div>
-                    <div class="form-group">
-                      <label for="due-date">Due date:</label>
-                      <input type="date" class="form-control" id="due-date">
-                      <!-- <input type="date" id="due-date" name="due-date"> -->
-                    </div>
+          <!-- new task list -->
+          <ul class="list-group" id="tasksList">
+            <li class="list-group-item">
+              <h5>Create the wireframe</h5>
+              <p>Build the wireframe with Fred on Figma, then ask Patrizia if it's okay!</p>
 
-                    <div class="form-group">
-                      <label for="exampleFormControlSelect1">Example select</label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>To do</option>
-                        <option>In progress</option>
-                        <option>Review</option>
-                        <option>Done</option>
-                      </select>
-                    </div>
-
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Reset</button>
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
-                </div>
+              <div class="d-flex w-100 mb-3 justify-content-between">
+                <small>Assigned To: <span class="font-weight-bold">Suganya</span></small>
+                <small><span>Due date:</span> 21/12/2021</small>
               </div>
-            </div>
-          </div>
-
-
-
-
-
-          <div class="card m-3 mx-auto" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Build a wireframe</h5>
-              <p class="card-text"><span class="font-weight-bold text-muted" >Task Description: </span>Build the wireframe with a team mate</p>
-              <p class="card-text"><span class="font-weight-bold text-muted">Name: </span>Suganya</p>
-              <p class="card-text"><span class="font-weight-bold text-muted">Due date: </span>21/12/2021</p>
-              
-              
+              <!-- The Dropdown menu & edit buttons: -->
               <div class="d-flex justify-content-between">
                 <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     In Progress
                   </button>
-                  <!-- TODO, IN PROGRESS, REVIEW, DONE -->
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">To do</a>
                     <a class="dropdown-item" href="#">In progress</a>
@@ -94,35 +158,51 @@
                     <a class="dropdown-item" href="#">Done</a>
                   </div>
                 </div>
-  
-                <button type="button" class="btn btn-light">Edit</button>
+                <div class="d-flex">
+                  <button type="button" class="btn btn-light mx-3">Delete</button>
+                  <button type="button" class="btn btn-light " data-toggle="modal" data-target="#editTask">Edit</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          
+          <!-- second tasks -->
+          <ul class="list-group mt-4" id="tasksList">
+            <li class="list-group-item">
+              <h5>Cook dinner</h5>
+              <p>
+                Boil the water, add the pasta, drain the pasta, serve. Then make a nice salad.
+              </p>
+              <div class="d-flex w-100 mb-3 justify-content-between">
+                <small>Assigned To: <span class="font-weight-bold">Fred</span></small>
+                <small><span>Due date:</span> 20/12/2021</small>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    To Do
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">To do</a>
+                    <a class="dropdown-item" href="#">In progress</a>
+                    <a class="dropdown-item" href="#">Review</a>
+                    <a class="dropdown-item" href="#">Done</a>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <button type="button" class="btn btn-light mx-3">Delete</button>
+                  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editTask">Edit</button>
+                </div>
               </div>
 
-              
+            </li>
 
-              </div>
-              
-            </div>
-          </div>
+          </ul>
 
 
-        </div>
-      </div>
-
-
-    
-
-      
-    
-
-
-    </div>
-
-  </head>
-  <body>
-    
-
-    <!-- for iphone layout -->
+        </div> <!-- This is for the column-->
+      </div> <!-- This is for the row-->
+    </div> <!-- This is for the container-->
 
 
 
