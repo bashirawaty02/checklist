@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
 
     
 
@@ -115,18 +116,21 @@
     </div>
 
 
-    <div class="container">
+    <div class="container-flex w-75 mx-auto">
       
       <div class="row">
         <div class="col">
 
           <!-- todo: put Tasks & the button into a flex box -->
-          <h2>Tasks</h2>
-          <p>
-            <span><button type="button" class="btn btn-light float-right" id="addTaskButton" data-toggle="modal" data-target="#newTask">Add Task</button></span>
-          </p>    
-          <br>
-          <br>
+          <div class="d-flex mt-4 justify-content-between" >
+            <h2>Tasks</h2>
+            <p>
+              <span><button type="button" class="btn btn-light float-right" id="addTaskButton" data-toggle="modal" data-target="#newTask">Add Task</button></span>
+            </p> 
+          </div>
+   
+          
+
 
           <!-- A button on the right hand side -->
           <!-- <div class="m-3 mx-auto d-flex flex-row-reverse" style="width: 18rem;">
@@ -159,13 +163,15 @@
                   </div>
                 </div>
                 <div class="d-flex">
-                  <button type="button" class="btn btn-light mx-3">Delete</button>
+                  <button type="button" class="btn btn-light mx-3">
+                    <span class="bi bi-trash"></span>
+                  </button>
                   <button type="button" class="btn btn-light " data-toggle="modal" data-target="#editTask">Edit</button>
                 </div>
               </div>
             </li>
           </ul>
-          
+
           <!-- second tasks -->
           <ul class="list-group mt-4" id="tasksList">
             <li class="list-group-item">
