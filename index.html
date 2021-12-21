@@ -5,17 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS & Bootstrap Icons link-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
-
-    
-
   </head>
   <body>
     
 
-    <!-- for iphone layout -->
+  
 
     <div class="modal fade" id="newTask" tabindex="-1" role="dialog" aria-labelledby="newTaskLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -49,8 +46,8 @@
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Example select</label>
                 <select class="form-control" id="exampleFormControlSelect1">
-                  <option>To do</option>
-                  <option>In progress</option>
+                  <option>To Do</option>
+                  <option>In Progress</option>
                   <option>Review</option>
                   <option>Done</option>
                 </select>
@@ -121,8 +118,7 @@
       <div class="row">
         <div class="col">
 
-          <!-- todo: put Tasks & the button into a flex box -->
-          <div class="d-flex mt-4 justify-content-between" >
+          <div class="d-flex mt-5 justify-content-between" >
             <h2>Tasks</h2>
             <p>
               <button type="button" class="btn btn-link float-right" id="addTaskButton" data-toggle="modal" data-target="#newTask">
@@ -130,17 +126,6 @@
               </button>
             </p> 
           </div>
-   
-          <!-- I deleted this! -->
-          <!-- style="font-size: rem; color: rgb(50, 110, 221);" -->
-
-
-          <!-- A button on the right hand side -->
-          <!-- <div class="m-3 mx-auto d-flex flex-row-reverse" style="width: 18rem;">
-            <button type="button" class="btn btn-light" data-toggle="modal" data-target="#newTask" data-whatever="@mdo">Add task</button>
-          </div>     -->
-
-      
 
           <!-- first task -->
           <ul class="list-group" id="tasksList">
@@ -156,11 +141,11 @@
               <div class="d-flex justify-content-between">
                 <div class="dropdown">
                   <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    In Progress
+                    Done
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">To do</a>
-                    <a class="dropdown-item" href="#">In progress</a>
+                    <a class="dropdown-item" href="#">To Do</a>
+                    <a class="dropdown-item" href="#">In Progress</a>
                     <a class="dropdown-item" href="#">Review</a>
                     <a class="dropdown-item" href="#">Done</a>
                   </div>
@@ -189,11 +174,11 @@
               <div class="d-flex justify-content-between">
                 <div class="dropdown">
                   <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    To Do
+                    Review
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">To do</a>
-                    <a class="dropdown-item" href="#">In progress</a>
+                    <a class="dropdown-item" href="#">To Do</a>
+                    <a class="dropdown-item" href="#">In Progress</a>
                     <a class="dropdown-item" href="#">Review</a>
                     <a class="dropdown-item" href="#">Done</a>
                   </div>
@@ -217,16 +202,16 @@
               </p>
               <div class="d-flex w-100 mb-3 justify-content-between">
                 <small class="text-primary font-weight-bold">@Fred</small>
-                <small class="text-secondary"><i class="bi bi-clock"></i> 22/12/2021</small>
+                <small class="text-secondary"><i class="bi bi-clock"></i> 23/12/2021</small>
               </div>
               <div class="d-flex justify-content-between">
                 <div class="dropdown">
                   <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    To Do
+                    In Progress
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">To do</a>
-                    <a class="dropdown-item" href="#">In progress</a>
+                    <a class="dropdown-item" href="#">To Do</a>
+                    <a class="dropdown-item" href="#">In Progress</a>
                     <a class="dropdown-item" href="#">Review</a>
                     <a class="dropdown-item" href="#">Done</a>
                   </div>
@@ -241,10 +226,47 @@
 
           </ul>
 
+          <!-- fourth task -->
+          <ul class="list-group" id="tasksList">
+            <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
+              <h5>Prepare for the Assessment</h5>
+              <p>
+                Go through the Codecademy exercises, revise with the pod then read the git cheat sheet. 
+              </p>
+              <div class="d-flex w-100 mb-3 justify-content-between">
+                <small class="text-primary font-weight-bold">@Alice</small>
+                <small class="text-secondary"><i class="bi bi-clock"></i> 23/12/2021</small>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    In Progress
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">To Do</a>
+                    <a class="dropdown-item" href="#">In Progress</a>
+                    <a class="dropdown-item" href="#">Review</a>
+                    <a class="dropdown-item" href="#">Done</a>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <button type="button" class="btn btn-light mx-3"><i class="bi bi-trash"></i></button>
+                  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
+                </div>
+              </div>
 
-        </div> <!-- This is for the column-->
-      </div> <!-- This is for the row-->
-    </div> <!-- This is for the container-->
+            </li>
+
+          </ul>
+
+          <!-- adding space at the bottom -->
+          <br>
+          <br>
+          <br>
+
+        </div> 
+      </div> 
+    </div> 
 
 
 
