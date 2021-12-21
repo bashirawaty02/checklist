@@ -116,7 +116,7 @@
     </div>
 
 
-    <div class="container w-sm-100 w-md-50 mx-auto">
+    <div class="container mx-auto">
       
       <div class="row">
         <div class="col">
@@ -125,11 +125,14 @@
           <div class="d-flex mt-4 justify-content-between" >
             <h2>Tasks</h2>
             <p>
-              <span><button type="button" class="btn btn-light float-right" id="addTaskButton" data-toggle="modal" data-target="#newTask"><i class="bi bi-plus" style="font-size: 2rem; color: rgb(50, 110, 221); margin: 0; padding: 0;"></i></button></span>
+              <button type="button" class="btn btn-link float-right" id="addTaskButton" data-toggle="modal" data-target="#newTask">
+                <i class="bi bi-plus-square" style="font-size: 2rem; line-height: 0;"></i>
+              </button>
             </p> 
           </div>
    
-          
+          <!-- I deleted this! -->
+          <!-- style="font-size: rem; color: rgb(50, 110, 221);" -->
 
 
           <!-- A button on the right hand side -->
@@ -139,15 +142,15 @@
 
       
 
-          <!-- new task list -->
+          <!-- first task -->
           <ul class="list-group" id="tasksList">
-            <li class="list-group-item">
+            <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
               <h5>Create the wireframe</h5>
               <p>Build the wireframe with Fred on Figma, then ask Patrizia if it's okay!</p>
 
               <div class="d-flex w-100 mb-3 justify-content-between">
-                <small>Assigned To: <span class="font-weight-bold">Suganya</span></small>
-                <small><span>Due date:</span> 21/12/2021</small>
+                <small class="text-primary font-weight-bold">@Suganya</small>
+                <small class="text-secondary"><i class="bi bi-clock"></i> 21/12/2021</small>
               </div>
               <!-- The Dropdown menu & edit buttons: -->
               <div class="d-flex justify-content-between">
@@ -173,15 +176,48 @@
           </ul>
 
           <!-- second tasks -->
-          <ul class="list-group mt-4" id="tasksList">
-            <li class="list-group-item">
+          <ul class="list-group" id="tasksList">
+            <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
               <h5>Cook dinner</h5>
               <p>
                 Boil the water, add the pasta, drain the pasta, serve. Then make a nice salad.
               </p>
               <div class="d-flex w-100 mb-3 justify-content-between">
-                <small>Assigned To: <span class="font-weight-bold">Fred</span></small>
-                <small><span>Due date:</span> 20/12/2021</small>
+                <small class="text-primary font-weight-bold">@Fred</small>
+                <small class="text-secondary"><i class="bi bi-clock"></i> 22/12/2021</small>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    To Do
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">To do</a>
+                    <a class="dropdown-item" href="#">In progress</a>
+                    <a class="dropdown-item" href="#">Review</a>
+                    <a class="dropdown-item" href="#">Done</a>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <button type="button" class="btn btn-light mx-3"><i class="bi bi-trash"></i></button>
+                  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
+                </div>
+              </div>
+
+            </li>
+
+          </ul>
+
+          <!-- third task -->
+          <ul class="list-group" id="tasksList">
+            <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
+              <h5>Prepare for Christmas Lunch</h5>
+              <p>
+                Wrap the presents, write the cards, pick a nice salad to make, buy the ingredients and pick an outfit. 
+              </p>
+              <div class="d-flex w-100 mb-3 justify-content-between">
+                <small class="text-primary font-weight-bold">@Fred</small>
+                <small class="text-secondary"><i class="bi bi-clock"></i> 22/12/2021</small>
               </div>
               <div class="d-flex justify-content-between">
                 <div class="dropdown">
