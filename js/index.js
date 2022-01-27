@@ -1,5 +1,8 @@
 let newTask = new TaskManager;
 
+const taskHTML = createTaskHtml("clean up", "just cleaning, idk", "fred", "2022-12-1", "done");
+console.log(taskHTML);
+
 
 const form = document.querySelector("#new-task-form");
 
@@ -12,7 +15,6 @@ const dueDate = document.getElementById("due-date");
 const taskStatus = document.getElementById("task-status");
 
 let errorCount = 0;
-
 
 const clearFormFields = () => {
     nameInput.value = "";
