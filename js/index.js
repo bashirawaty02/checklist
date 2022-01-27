@@ -1,3 +1,6 @@
+let newTask = new TaskManager;
+
+
 const form = document.querySelector("#new-task-form");
 
 form.addEventListener("submit", (event) => {
@@ -7,10 +10,28 @@ form.addEventListener("submit", (event) => {
     const dueDate = document.getElementById("due-date");
     const taskStatus = document.getElementById("task-status");
 
-    let isValid = true;
+    let errorCount = 0;
     
+
+
+
+
     event.preventDefault();
-    event.stopPropagation();
+    // event.stopPropagation(); (they got rid of it??)
+
+    const clearFormFields = () => {
+        nameInput.value = "";
+        description.value = "";
+        assignedTo.value = "";
+        taskStatus.value = "To Do";
+        dueDate.value = "";
+        nameInput.classList.remove("is-valid");
+        description.classList.remove("is-valid");
+        assignedTo.classList.remove("is-valid");
+        taskStatus.classList.remove("is-valid");
+        dueDate.classList.remove("is-valid");
+      };
+
 
     // For debuggin:
     console.log(`the length of the name field is: ${nameInput.value.length}`);
@@ -23,6 +44,7 @@ form.addEventListener("submit", (event) => {
         console.log("the name field is less than 5")
         nameInput.classList.add("is-invalid");
         nameInput.classList.remove("is-valid");
+        errorCount++;
     } else {
         console.log("the name field is more than 5")
         nameInput.classList.remove("is-invalid");
@@ -34,6 +56,7 @@ form.addEventListener("submit", (event) => {
         console.log("the description field is less than 5")
         description.classList.add("is-invalid");
         description.classList.remove("is-valid");
+        errorCount++;
     } else {
         console.log("the description field is more than 5")
         description.classList.remove("is-invalid");
@@ -45,20 +68,24 @@ form.addEventListener("submit", (event) => {
         console.log("the description field is less than 5");
         assignedTo.classList.add("is-invalid");
         assignedTo.classList.remove("is-valid");
+        errorCount++;
     } else {
         console.log("the description field is more than 5");
         assignedTo.classList.remove("is-invalid");
         assignedTo.classList.add("is-valid");
     }
 
-    if(dueDate.value){
-        console.log("the description field is less than 5");
+    // Date validation
+    if(Date.now() < Date.parse(dueDate.value)){
+        console.log("the due date is:" + dueDate.value)
+        console.log("today's date is: " + Date.now())
         dueDate.classList.remove("is-invalid");
         dueDate.classList.add("is-valid");
     } else {
         console.log("the description field is more than 5");
         dueDate.classList.add("is-invalid");
         dueDate.classList.remove("is-valid");
+        errorCount++;
     }
 
     if(taskStatus.value){
@@ -69,7 +96,39 @@ form.addEventListener("submit", (event) => {
         console.log("the description field is more than 5");
         taskStatus.classList.add("is-invalid");
         taskStatus.classList.remove("is-valid");
+        errorCount++;
     }
 
+    if(errorCount > 0){
+        errorCount = 0;
+        return;
+    } else {
+        newTask.addTask(
+            nameInput.value,
+            description.value,
+            assignedTo.value,
+            dueDate.value,
+            taskStatus.value
+        );
+        clearFormFields();
+    }
+
+    console.log(newTask.tasks);
 
 });
+
+
+const todayDate = document.querySelector("#date-today");
+
+var today = new Date();
+// var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var date = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()-2000}`;
+// console.log(today.getMonth() + 1)
+
+// set the date to today:
+console.log(today);
+todayDate.innerHTML =  date;
+
+// var myTasks = new TaskManager();
+
+// myTasks.addTask("cook the pasta", "boil the water", "fred", "20-12-2023", "to do");
