@@ -8,6 +8,10 @@
     <!-- Bootstrap CSS & Bootstrap Icons link-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- our js -->
+    <script src="index.js"></script>
+    
   </head>
   <body>
     
@@ -27,7 +31,7 @@
             <form>
               <div class="form-group">
                 <label for="task-name" class="col-form-label">Task name:</label>
-                <input type="text" class="form-control" id="task-name">
+                <input required type="text" class="form-control" id="task-name">
               </div>
               <div class="form-group">
                 <label for="task-description" class="col-form-label">Task description:</label>
@@ -57,7 +61,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Reset</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Done</button> -->
+            <button type="button" class="btn btn-primary" >Done</button>
           </div>
         </div>
       </div>
