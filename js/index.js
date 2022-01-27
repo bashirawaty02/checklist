@@ -30,9 +30,6 @@ const clearFormFields = () => {
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     // event.stopPropagation(); (they got rid of it??)
-
-
-
     // For debuggin:
     console.log(`the length of the name field is: ${nameInput.value.length}`);
     console.log(description.value);
@@ -117,6 +114,7 @@ form.addEventListener("submit", (event) => {
 
 });
 
+resetButton.addEventListener("onclick", clearFormFields)
 
 const todayDate = document.querySelector("#date-today");
 
