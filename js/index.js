@@ -3,34 +3,34 @@ let newTask = new TaskManager;
 
 const form = document.querySelector("#new-task-form");
 
+const resetButton = document.getElementById("reset-form");
+
+const nameInput = document.getElementById("task-name");
+const description = document.getElementById("task-description");
+const assignedTo = document.getElementById("assigned-to");
+const dueDate = document.getElementById("due-date");
+const taskStatus = document.getElementById("task-status");
+
+let errorCount = 0;
+
+
+const clearFormFields = () => {
+    nameInput.value = "";
+    description.value = "";
+    assignedTo.value = "";
+    taskStatus.value = "To Do";
+    dueDate.value = "";
+    nameInput.classList.remove("is-valid");
+    description.classList.remove("is-valid");
+    assignedTo.classList.remove("is-valid");
+    taskStatus.classList.remove("is-valid");
+    dueDate.classList.remove("is-valid");
+};
+
 form.addEventListener("submit", (event) => {
-    const nameInput = document.getElementById("task-name");
-    const description = document.getElementById("task-description");
-    const assignedTo = document.getElementById("assigned-to");
-    const dueDate = document.getElementById("due-date");
-    const taskStatus = document.getElementById("task-status");
-
-    let errorCount = 0;
-    
-
-
-
-
     event.preventDefault();
     // event.stopPropagation(); (they got rid of it??)
 
-    const clearFormFields = () => {
-        nameInput.value = "";
-        description.value = "";
-        assignedTo.value = "";
-        taskStatus.value = "To Do";
-        dueDate.value = "";
-        nameInput.classList.remove("is-valid");
-        description.classList.remove("is-valid");
-        assignedTo.classList.remove("is-valid");
-        taskStatus.classList.remove("is-valid");
-        dueDate.classList.remove("is-valid");
-      };
 
 
     // For debuggin:
