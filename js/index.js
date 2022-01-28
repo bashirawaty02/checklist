@@ -138,8 +138,10 @@ taskList.addEventListener("click",(event) => {
 
     if(event.target.classList.contains("done-button")) {
         console.log("you clicked the 'done button'");
+
         let parentTask = event.target.parentElement.parentElement;
         parentTask.classList.add("bg-success");
+        console.log(parentTask);
         // parentTask.classList.add("bg-white");
     }
 

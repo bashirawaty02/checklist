@@ -1,8 +1,8 @@
-function createTaskHtml(name, description, assignedTo, dueDate, status){
+function createTaskHtml(name, description, assignedTo, dueDate, status, id){
 
     const html = `
     <ul class="list-group" id="tasksList">
-      <li class="list-group-item shadow p-3 mb-3 rounded">
+      <li class="list-group-item shadow p-3 mb-3 rounded" data-task-id="${id}">
         <h5>${name}</h5>
         <p>${description}</p>
 
@@ -67,7 +67,7 @@ class TaskManager {
             let task = this.tasks[i];
             let date = new Date(task.dueDate)
             const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-            let taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate , task.status);
+            let taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate , task.status, task.id);
             tasksHtmlList.push(taskHtml);
         }
 
@@ -77,5 +77,24 @@ class TaskManager {
         taskList.innerHTML = tasksHtml;
         
     }
+
+    getTaskById(taskId){
+        
+        let foundTask;
+
+        for (let i = 0; i < this.tasks.length; i++) {
+            
+            let task = this.tasks[i];
+
+            if(task.id === taskId) {
+                foundTask = task;
+            }
+        }
+
+        return foundTask;
+    }
+
+    // getTaskById(1)
+
 }
 
