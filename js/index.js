@@ -110,6 +110,7 @@ form.addEventListener("submit", (event) => {
             taskStatus.value
         );
         clearFormFields();
+        newTask.render();
     }
 
     console.log(newTask.tasks);

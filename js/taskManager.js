@@ -44,6 +44,7 @@ class TaskManager {
         this.tasks = [];
         this.currentId = currentId;
     }
+
     addTask(name, description, assignedTo, dueDate, status){
         this.currentId++;
 
@@ -58,4 +59,34 @@ class TaskManager {
 
         this.tasks.push(task)
     }
+
+    render(){
+        let tasksHtmlList = [];
+
+        const beforeHtml = `<div class="d-flex mt-5 justify-content-between" >
+        <h2>Tasks for <span  id="date-today">Today</span></h2>
+        <p>
+          <button type="button" class="btn btn-link float-right" id="addTaskButton" data-toggle="modal" data-target="#newTask">
+            <i class="bi bi-plus-square" style="font-size: 2rem; line-height: 0;"></i>
+          </button>
+        </p> 
+      </div>`
+
+      tasksHtmlList.push(beforeHtml);
+
+        for (let i = 0; i < this.tasks.length; i++) {
+            let task = this.tasks[i];
+            let date = new Date(task.dueDate)
+            
+            let taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, date.formattedDate, task.status);
+            tasksHtmlList.push(taskHtml);
+        }
+
+        let tasksHtml = tasksHtmlList.join("\n");
+
+        let taskList = document.getElementById("task-list");
+        taskList.innerHTML = tasksHtml;
+        
+    }
 }
+
