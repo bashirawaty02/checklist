@@ -66,8 +66,8 @@ class TaskManager {
         for (let i = 0; i < this.tasks.length; i++) {
             let task = this.tasks[i];
             let date = new Date(task.dueDate)
-            
-            let taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, date.formattedDate, task.status);
+            const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+            let taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate , task.status);
             tasksHtmlList.push(taskHtml);
         }
 
