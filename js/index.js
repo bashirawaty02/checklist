@@ -130,6 +130,23 @@ var date = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()-2000}
 console.log(today);
 todayDate.innerHTML =  date;
 
+const taskList = document.getElementById("task-list");
+
+taskList.addEventListener("click",(event) => {
+    // console.log(event.target.classList);
+    
+
+    if(event.target.classList.contains("done-button")) {
+        console.log("you clicked the 'done button'");
+        let parentTask = event.target.parentElement.parentElement;
+        parentTask.classList.add("bg-success");
+        // parentTask.classList.add("bg-white");
+    }
+
+    
+    
+
+});
 // var myTasks = new TaskManager();
 
 // myTasks.addTask("cook the pasta", "boil the water", "fred", "20-12-2023", "to do");

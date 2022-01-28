@@ -3,7 +3,7 @@ function createTaskHtml(name, description, assignedTo, dueDate, status){
     const html = `
     <!-- first task -->
     <ul class="list-group" id="tasksList">
-      <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
+      <li class="list-group-item shadow p-3 mb-3 rounded">
         <h5>${name}</h5>
         <p>${description}</p>
 
@@ -24,6 +24,7 @@ function createTaskHtml(name, description, assignedTo, dueDate, status){
               <a class="dropdown-item" href="#">Done</a>
             </div>
           </div>
+          <button class="btn btn-light done-button">Done</button>
           <div class="d-flex">
             <button type="button" class="btn btn-light mx-3">
               <i class="bi bi-trash"></i>
