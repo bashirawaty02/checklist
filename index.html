@@ -163,7 +163,7 @@
     <div class="container mx-auto">
       
       <div class="row">
-        <div id="task-list" class="col">
+        <div class="col">
 
           <div class="d-flex mt-5 justify-content-between" >
             <h2>Tasks for <span  id="date-today">Today</span></h2>
@@ -174,140 +174,142 @@
             </p> 
           </div>
 
+          <div id="task-list">
           <!-- first task -->
-          <ul class="list-group" id="tasksList">
-            <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
-              <h5>Create the wireframe</h5>
-              <p>Build the wireframe with Fred on Figma, then ask Patrizia if it's okay!</p>
+            <ul class="list-group" id="tasksList">
+              <li class="list-group-item shadow p-3 mb-3 rounded">
+                <h5>Create the wireframe</h5>
+                <p>Build the wireframe with Fred on Figma, then ask Patrizia if it's okay!</p>
 
-              <div class="d-flex w-100 mb-3 justify-content-between">
-                <small class="text-primary font-weight-bold">@Suganya</small>
-                <small class="text-secondary"><i class="bi bi-clock"></i> 21/12/2021</small>
-              </div>
-              <!-- The Dropdown menu & edit buttons: -->
-              <div class="d-flex justify-content-between">
-                <div class="dropdown">
-                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Done
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">To Do</a>
-                    <a class="dropdown-item" href="#">In Progress</a>
-                    <a class="dropdown-item" href="#">Review</a>
-                    <a class="dropdown-item" href="#">Done</a>
+                <div class="d-flex w-100 mb-3 justify-content-between">
+                  <small class="text-primary font-weight-bold">@Suganya</small>
+                  <small class="text-secondary"><i class="bi bi-clock"></i> 21/12/2021</small>
+                </div>
+                <!-- The Dropdown menu & edit buttons: -->
+                <div class="d-flex justify-content-between">
+                  <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Done
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">To Do</a>
+                      <a class="dropdown-item" href="#">In Progress</a>
+                      <a class="dropdown-item" href="#">Review</a>
+                      <a class="dropdown-item" href="#">Done</a>
+                    </div>
+                  </div>
+                  <button class="btn btn-light">Done</button>
+                  <div class="d-flex">
+                    <button type="button" class="btn btn-light mx-3">
+                      <i class="bi bi-trash"></i>
+                    </button>
+                    <button type="button" class="btn btn-light " data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
                   </div>
                 </div>
-                <button class="btn btn-light">Done</button>
-                <div class="d-flex">
-                  <button type="button" class="btn btn-light mx-3">
-                    <i class="bi bi-trash"></i>
-                  </button>
-                  <button type="button" class="btn btn-light " data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
-                </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
 
-          <!-- second tasks -->
-          <ul class="list-group" id="tasksList">
-            <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
-              <h5>Cook dinner</h5>
-              <p>
-                Boil the water, add the pasta, drain the pasta, serve. Then make a nice salad.
-              </p>
-              <div class="d-flex w-100 mb-3 justify-content-between">
-                <small class="text-primary font-weight-bold">@Fred</small>
-                <small class="text-secondary"><i class="bi bi-clock"></i> 22/12/2021</small>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div class="dropdown">
-                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Review
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">To Do</a>
-                    <a class="dropdown-item" href="#">In Progress</a>
-                    <a class="dropdown-item" href="#">Review</a>
-                    <a class="dropdown-item" href="#">Done</a>
+            <!-- second tasks -->
+            <ul class="list-group" id="tasksList">
+              <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
+                <h5>Cook dinner</h5>
+                <p>
+                  Boil the water, add the pasta, drain the pasta, serve. Then make a nice salad.
+                </p>
+                <div class="d-flex w-100 mb-3 justify-content-between">
+                  <small class="text-primary font-weight-bold">@Fred</small>
+                  <small class="text-secondary"><i class="bi bi-clock"></i> 22/12/2021</small>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Review
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">To Do</a>
+                      <a class="dropdown-item" href="#">In Progress</a>
+                      <a class="dropdown-item" href="#">Review</a>
+                      <a class="dropdown-item" href="#">Done</a>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <button type="button" class="btn btn-light mx-3"><i class="bi bi-trash"></i></button>
+                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
                   </div>
                 </div>
-                <div class="d-flex">
-                  <button type="button" class="btn btn-light mx-3"><i class="bi bi-trash"></i></button>
-                  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
+
+              </li>
+
+            </ul>
+
+            <!-- third task -->
+            <ul class="list-group" id="tasksList">
+              <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
+                <h5>Prepare for Christmas Lunch</h5>
+                <p>
+                  Wrap the presents, write the cards, pick a nice salad to make, buy the ingredients and pick an outfit. 
+                </p>
+                <div class="d-flex w-100 mb-3 justify-content-between">
+                  <small class="text-primary font-weight-bold">@Fred</small>
+                  <small class="text-secondary"><i class="bi bi-clock"></i> 23/12/2021</small>
                 </div>
-              </div>
-
-            </li>
-
-          </ul>
-
-          <!-- third task -->
-          <ul class="list-group" id="tasksList">
-            <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
-              <h5>Prepare for Christmas Lunch</h5>
-              <p>
-                Wrap the presents, write the cards, pick a nice salad to make, buy the ingredients and pick an outfit. 
-              </p>
-              <div class="d-flex w-100 mb-3 justify-content-between">
-                <small class="text-primary font-weight-bold">@Fred</small>
-                <small class="text-secondary"><i class="bi bi-clock"></i> 23/12/2021</small>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div class="dropdown">
-                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    In Progress
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">To Do</a>
-                    <a class="dropdown-item" href="#">In Progress</a>
-                    <a class="dropdown-item" href="#">Review</a>
-                    <a class="dropdown-item" href="#">Done</a>
+                <div class="d-flex justify-content-between">
+                  <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      In Progress
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">To Do</a>
+                      <a class="dropdown-item" href="#">In Progress</a>
+                      <a class="dropdown-item" href="#">Review</a>
+                      <a class="dropdown-item" href="#">Done</a>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <button type="button" class="btn btn-light mx-3"><i class="bi bi-trash"></i></button>
+                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
                   </div>
                 </div>
-                <div class="d-flex">
-                  <button type="button" class="btn btn-light mx-3"><i class="bi bi-trash"></i></button>
-                  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
+
+              </li>
+
+            </ul>
+
+            <!-- fourth task -->
+            <ul class="list-group" id="tasksList">
+              <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
+                <h5>Prepare for the Assessment</h5>
+                <p>
+                  Go through the Codecademy exercises, revise with the pod then read the git cheat sheet. 
+                </p>
+                <div class="d-flex w-100 mb-3 justify-content-between">
+                  <small class="text-primary font-weight-bold">@Alice</small>
+                  <small class="text-secondary"><i class="bi bi-clock"></i> 23/12/2021</small>
                 </div>
-              </div>
-
-            </li>
-
-          </ul>
-
-          <!-- fourth task -->
-          <ul class="list-group" id="tasksList">
-            <li class="list-group-item shadow p-3 mb-3 bg-white rounded">
-              <h5>Prepare for the Assessment</h5>
-              <p>
-                Go through the Codecademy exercises, revise with the pod then read the git cheat sheet. 
-              </p>
-              <div class="d-flex w-100 mb-3 justify-content-between">
-                <small class="text-primary font-weight-bold">@Alice</small>
-                <small class="text-secondary"><i class="bi bi-clock"></i> 23/12/2021</small>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div class="dropdown">
-                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    In Progress
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">To Do</a>
-                    <a class="dropdown-item" href="#">In Progress</a>
-                    <a class="dropdown-item" href="#">Review</a>
-                    <a class="dropdown-item" href="#">Done</a>
+                <div class="d-flex justify-content-between">
+                  <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      In Progress
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#">To Do</a>
+                      <a class="dropdown-item" href="#">In Progress</a>
+                      <a class="dropdown-item" href="#">Review</a>
+                      <a class="dropdown-item" href="#">Done</a>
+                    </div>
+                  </div>
+                  <div class="d-flex">
+                    <button type="button" class="btn btn-light mx-3"><i class="bi bi-trash"></i></button>
+                    <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
                   </div>
                 </div>
-                <div class="d-flex">
-                  <button type="button" class="btn btn-light mx-3"><i class="bi bi-trash"></i></button>
-                  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
-                </div>
-              </div>
 
-            </li>
+              </li>
 
-          </ul>
+            </ul>
 
-          <!-- adding space at the bottom -->
+          </div>
+            <!-- adding space at the bottom -->
           <br>
           <br>
           <br>

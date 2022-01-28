@@ -1,7 +1,6 @@
 function createTaskHtml(name, description, assignedTo, dueDate, status){
 
     const html = `
-    <!-- first task -->
     <ul class="list-group" id="tasksList">
       <li class="list-group-item shadow p-3 mb-3 rounded">
         <h5>${name}</h5>
@@ -63,17 +62,6 @@ class TaskManager {
 
     render(){
         let tasksHtmlList = [];
-
-        const beforeHtml = `<div class="d-flex mt-5 justify-content-between" >
-        <h2>Tasks for <span  id="date-today">Today</span></h2>
-        <p>
-          <button type="button" class="btn btn-link float-right" id="addTaskButton" data-toggle="modal" data-target="#newTask">
-            <i class="bi bi-plus-square" style="font-size: 2rem; line-height: 0;"></i>
-          </button>
-        </p> 
-      </div>`
-
-      tasksHtmlList.push(beforeHtml);
 
         for (let i = 0; i < this.tasks.length; i++) {
             let task = this.tasks[i];
