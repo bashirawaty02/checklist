@@ -1,8 +1,6 @@
 let newTask = new TaskManager;
 
 const taskHTML = createTaskHtml("clean up", "just cleaning, idk", "fred", "2022-12-1", "done");
-console.log(taskHTML);
-
 
 const form = document.querySelector("#new-task-form");
 
@@ -33,11 +31,11 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
     // event.stopPropagation(); (they got rid of it??)
     // For debuggin:
-    console.log(`the length of the name field is: ${nameInput.value.length}`);
-    console.log(description.value);
-    console.log(assignedTo.value);
-    console.log(dueDate.value);
-    console.log(taskStatus.value);
+    // console.log(`the length of the name field is: ${nameInput.value.length}`);
+    // console.log(description.value);
+    // console.log(assignedTo.value);
+    // console.log(dueDate.value);
+    // console.log(taskStatus.value);
 
     if(nameInput.value.length < 5){
         console.log("the name field is less than 5")
@@ -45,54 +43,54 @@ form.addEventListener("submit", (event) => {
         nameInput.classList.remove("is-valid");
         errorCount++;
     } else {
-        console.log("the name field is more than 5")
+        // console.log("the name field is more than 5")
         nameInput.classList.remove("is-invalid");
         nameInput.classList.add("is-valid");
     }
 
 
     if(description.value.length < 5){
-        console.log("the description field is less than 5")
+        // console.log("the description field is less than 5")
         description.classList.add("is-invalid");
         description.classList.remove("is-valid");
         errorCount++;
     } else {
-        console.log("the description field is more than 5")
+        // console.log("the description field is more than 5")
         description.classList.remove("is-invalid");
         description.classList.add("is-valid");
     }
 
 
     if(assignedTo.value.length < 5){
-        console.log("the description field is less than 5");
+        // console.log("the description field is less than 5");
         assignedTo.classList.add("is-invalid");
         assignedTo.classList.remove("is-valid");
         errorCount++;
     } else {
-        console.log("the description field is more than 5");
+        // console.log("the description field is more than 5");
         assignedTo.classList.remove("is-invalid");
         assignedTo.classList.add("is-valid");
     }
 
     // Date validation
     if(Date.now() < Date.parse(dueDate.value)){
-        console.log("the due date is:" + dueDate.value)
-        console.log("today's date is: " + Date.now())
+        // console.log("the due date is:" + dueDate.value)
+        // console.log("today's date is: " + Date.now())
         dueDate.classList.remove("is-invalid");
         dueDate.classList.add("is-valid");
     } else {
-        console.log("the description field is more than 5");
+        // console.log("the description field is more than 5");
         dueDate.classList.add("is-invalid");
         dueDate.classList.remove("is-valid");
         errorCount++;
     }
 
     if(taskStatus.value){
-        console.log("the description field is less than 5");
+        // console.log("the description field is less than 5");
         taskStatus.classList.remove("is-invalid");
         taskStatus.classList.add("is-valid");
     } else {
-        console.log("the description field is more than 5");
+        // console.log("the description field is more than 5");
         taskStatus.classList.add("is-invalid");
         taskStatus.classList.remove("is-valid");
         errorCount++;
@@ -113,7 +111,7 @@ form.addEventListener("submit", (event) => {
         newTask.render();
     }
 
-    console.log(newTask.tasks);
+    // console.log(newTask.tasks);
 
 });
 
@@ -127,22 +125,20 @@ var date = `${today.getDate()}/${today.getMonth()+1}/${today.getFullYear()-2000}
 // console.log(today.getMonth() + 1)
 
 // set the date to today:
-console.log(today);
+// console.log(today);
 todayDate.innerHTML =  date;
 
 const taskList = document.getElementById("task-list");
 
 taskList.addEventListener("click",(event) => {
-    // console.log(event.target.classList);
-    
-
     if(event.target.classList.contains("done-button")) {
-        console.log("you clicked the 'done button'");
-
+        // console.log("you clicked the 'done button'");
         let parentTask = event.target.parentElement.parentElement;
         parentTask.classList.add("bg-success");
-        console.log(parentTask);
-        // parentTask.classList.add("bg-white");
+        const taskId = parseInt(parentTask.dataset.taskId);
+        const task = newTask.getTaskById(taskId);
+        task.status = "Done";
+        newTask.render();
     }
 
     
