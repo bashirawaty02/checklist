@@ -106,14 +106,56 @@ const taskList = document.getElementById("task-list");
 
 taskList.addEventListener("click",(event) => {
     console.log("you clicked me!");
-    if(event.target.classList.contains("done-button")) {
-        console.log("you clicked the done button");
-        let parentTask = event.target.parentElement.parentElement;
+
+    // my new code for the dropdown menu:
+    // console.log(event.target.classList);
+    
+    // I think... you can ignore the other clicks!
+    if(event.target.classList.contains("dropdown-item")) {
+        console.log("you clicked a dropdown menu item!")
+        let parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+        console.log(parentTask.classList);
         const taskId = parseInt(parentTask.dataset.taskId);
         const task = newTask.getTaskById(taskId);
-        task.status = "Done";
+
+        // switch thing:
+        console.log(event.target.id);   
+        
+        switch(event.target.id) {
+            case "done":
+                console.log("You clicked Done!")
+                task.status = "Done";
+                break;
+            case "review":
+                console.log("You clicked Review!")
+                task.status = "Review";
+                break;
+            case "in-progress":
+                console.log("You clicked in progress!")
+                task.status = "In Progress";
+                break;
+            case "to-do":
+                console.log("You clicked to do!")
+                task.status = "To Do";
+                break;
+            default:
+                console.log("Default hit, what went wrong?")
+                break;
+        }
+
         newTask.render();
+
+        console.log(taskId);
     }
+
+    // all the code for the done button event
+    // if(event.target.classList.contains("done-button")) {
+    //     let parentTask = event.target.parentElement.parentElement;
+    //     const taskId = parseInt(parentTask.dataset.taskId);
+    //     const task = newTask.getTaskById(taskId);
+    //     task.status = "Done";
+    //     newTask.render();
+    // }
 
     
     

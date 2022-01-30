@@ -16,14 +16,14 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
             <button class="btn ${(status === "In Progress") ? "btn-danger" : "btn-light"} dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               ${status}
             </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">To Do</a>
-              <a class="dropdown-item" href="#">In Progress</a>
-              <a class="dropdown-item" href="#">Review</a>
-              <a class="dropdown-item" href="#">Done</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" id="to-do" style="cursor: grab">To Do</a>
+              <a class="dropdown-item" id="in-progress" style="cursor: grab">In Progress</a>
+              <a class="dropdown-item" id="review" style="cursor: grab">Review</a>
+              <a class="dropdown-item" id="done" style="cursor: grab">Done</a>
             </div>
           </div>
-          <button class="btn btn-light done-button ${(status === "Done") ? "invisible" : "visible"}">Done</button>
+          
           <div class="d-flex">
             <button type="button" class="btn btn-light mx-3">
               <i class="bi bi-trash"></i>
