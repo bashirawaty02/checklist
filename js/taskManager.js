@@ -13,8 +13,7 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
         <!-- The Dropdown menu & edit buttons: -->
         <div class="d-flex justify-content-between">
           <div class="dropdown">
-            <span>Task status: ${status}</span>
-            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn ${(status === "In Progress") ? "btn-danger" : "btn-light"} dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               ${status}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -24,7 +23,7 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
               <a class="dropdown-item" href="#">Done</a>
             </div>
           </div>
-          <button class="btn btn-light done-button">Done</button>
+          <button class="btn btn-light done-button ${(status === "Done") ? "invisible" : "visible"}">Done</button>
           <div class="d-flex">
             <button type="button" class="btn btn-light mx-3">
               <i class="bi bi-trash"></i>
