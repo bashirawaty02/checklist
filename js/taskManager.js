@@ -90,11 +90,7 @@ class TaskManager {
                 foundTask = task;
             }
         }
-
         return foundTask;
     }
-
-    // getTaskById(1)
-
 }
 
