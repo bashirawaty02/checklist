@@ -90,6 +90,7 @@ form.addEventListener("submit", (event) => {
             taskStatus.value
         );
         clearFormFields();
+        newTask.save();
         newTask.render();
     }
 });
@@ -143,6 +144,7 @@ taskList.addEventListener("click",(event) => {
                 break;
         }
 
+        newTask.save();
         newTask.render();
 
         console.log(taskId);

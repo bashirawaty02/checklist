@@ -92,5 +92,15 @@ class TaskManager {
         }
         return foundTask;
     }
+
+    save(){
+      const tasksJson = JSON.stringify(this.tasks)
+      const currentIdString = `${this.currentId}`
+
+      localStorage.setItem('tasks',tasksJson);
+      localStorage.setItem('currentId', currentIdString);
+      
+
+    }
 }
 
