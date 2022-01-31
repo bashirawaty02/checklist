@@ -108,12 +108,6 @@ todayDate.innerHTML =  date;
 const taskList = document.getElementById("task-list");
 
 taskList.addEventListener("click",(event) => {
-    // console.log("you clicked me!");
-
-    // my new code for the dropdown menu:
-    // console.log(event.target.classList);
-    
-    // I think... you can ignore the other clicks!
     if(event.target.classList.contains("dropdown-item")) {
         console.log("you clicked a dropdown menu item!")
         let parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
@@ -160,20 +154,17 @@ taskList.addEventListener("click",(event) => {
         newTask.deleteTask(taskId);
         newTask.save();
         newTask.render();
+    // this accounts for the fact that icons are classes in bootstrap,
+    //  so we need a special case for when we click the trash icon
+    // I'm sure there's a more elegant way of fixing this!
+    } else if ( event.target.parentElement.classList.contains("delete-button")) {
+        console.log("You clicked the trash can icon!");
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+        const taskId = parseInt(parentTask.dataset.taskId);
+        console.log(taskId);
+        newTask.deleteTask(taskId);
+        newTask.save();
+        newTask.render();
     }
-
-    
-
-    // all the code for the done button event
-    // if(event.target.classList.contains("done-button")) {
-    //     let parentTask = event.target.parentElement.parentElement;
-    //     const taskId = parseInt(parentTask.dataset.taskId);
-    //     const task = newTask.getTaskById(taskId);
-    //     task.status = "Done";
-    //     newTask.render();
-    // }
-
-    
-    
 
 });
