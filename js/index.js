@@ -152,6 +152,8 @@ taskList.addEventListener("click",(event) => {
         console.log(taskId);
     }
 
+    // if(event.)
+
     // all the code for the done button event
     // if(event.target.classList.contains("done-button")) {
     //     let parentTask = event.target.parentElement.parentElement;
