@@ -26,7 +26,7 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
           
           <div class="d-flex">
             <button type="button" class="btn btn-light mx-3 delete-button">
-              <i class="bi bi-trash"></i>
+              Delete
             </button>
             <button type="button" class="btn btn-light " data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
           </div>

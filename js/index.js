@@ -108,7 +108,7 @@ todayDate.innerHTML =  date;
 const taskList = document.getElementById("task-list");
 
 taskList.addEventListener("click",(event) => {
-    console.log("you clicked me!");
+    // console.log("you clicked me!");
 
     // my new code for the dropdown menu:
     // console.log(event.target.classList);
@@ -152,7 +152,17 @@ taskList.addEventListener("click",(event) => {
         console.log(taskId);
     }
 
-    // if(event.)
+    if(event.target.classList.contains("delete-button")) {
+        console.log("You clicked the delete button");
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+        const taskId = parseInt(parentTask.dataset.taskId);
+        console.log(taskId);
+        newTask.deleteTask(taskId);
+        newTask.save();
+        newTask.render();
+    }
+
+    
 
     // all the code for the done button event
     // if(event.target.classList.contains("done-button")) {
