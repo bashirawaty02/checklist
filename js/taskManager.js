@@ -1,19 +1,51 @@
 function createTaskHtml(name, description, assignedTo, dueDate, status, id){
 
+  let bgColor = "";
+  let textColor = "";
+  let btnColor = "";
+
+  switch(status) {
+    case "In Progress":
+      // in progress has green styles!
+    
+      bgColor = "#20c997";
+      textColor = "text-dark";
+      btnColor = "btn-light";
+      break;
+    case "To Do":
+      bgColor = "#fd7e14";
+      textColor = "text-dark";
+      btnColor = "btn-dark";
+      break;
+    case "Review":
+        bgColor = "#0a58ca";
+        textColor = "text-light";
+        btnColor = "btn-light";
+        break;
+    case "Done":
+      bgColor = "#6c757d";
+      textColor = "text-light";
+      btnColor = "btn-dark";
+      break;
+    default:
+      // code block
+      console.log("Someting went wrong!")
+  }
+
     const html = `
     <ul class="list-group" id="tasksList">
-      <li class="list-group-item shadow p-3 mb-3 rounded" data-task-id="${id}">
+      <li class="list-group-item shadow p-3 mb-3 rounded ${textColor}" data-task-id="${id}" style="background-color: ${bgColor};">
         <h5>${name}</h5>
         <p>${description}</p>
 
         <div class="d-flex w-100 mb-3 justify-content-between">
-          <small class="text-primary font-weight-bold">@${assignedTo}</small>
-          <small class="text-secondary"><i class="bi bi-clock"></i> ${dueDate}</small>
+          <small class=" font-weight-bold">@${assignedTo}</small>
+          <small><i class="bi bi-clock"></i> ${dueDate}</small>
         </div>
         <!-- The Dropdown menu & edit buttons: -->
         <div class="d-flex justify-content-between">
           <div class="dropdown">
-            <button class="btn ${(status === "In Progress") ? "btn-danger" : "btn-light"} dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn ${btnColor} dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               ${status}
             </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -25,10 +57,10 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id){
           </div>
           
           <div class="d-flex">
-            <button type="button" class="btn btn-light mx-3 delete-button">
+            <button type="button" class="btn ${btnColor} mx-3 delete-button">
               <i class="bi bi-trash"></i>
             </button>
-            <button type="button" class="btn btn-light " data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
+            <button type="button" class="btn ${btnColor} " data-toggle="modal" data-target="#editTask"><i class="bi bi-pencil-square"></i></button>
           </div>
         </div>
       </li>
