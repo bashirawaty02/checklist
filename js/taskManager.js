@@ -102,5 +102,18 @@ class TaskManager {
       
 
     }
+
+    load(){
+      if(localStorage.getItem("tasks")){
+        const tasksString = localStorage.getItem("tasks")
+        this.tasks = JSON.parse(tasksString);
+      }
+
+      if(localStorage.getItem("currentId")){
+        const currentIdString = localStorage.getItem("currentId")
+        this.currentId = parseInt(currentIdString);
+      }
+
+    }
 }
 

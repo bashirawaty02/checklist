@@ -1,4 +1,6 @@
 let newTask = new TaskManager;
+newTask.load();
+newTask.render();
 
 const taskHTML = createTaskHtml("clean up", "just cleaning, idk", "fred", "2022-12-1", "done");
 
