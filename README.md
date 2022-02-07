@@ -8,7 +8,7 @@ This is a demonstration of some of the javascript and bootstrap skills Fred & Su
 
 ## Authors
 
-- [Suganya](https://www.github.com/)
+- [Suganya](https://github.com/Murugaian)
 - [Fred](https://www.github.com/f-a-n)
 
 
